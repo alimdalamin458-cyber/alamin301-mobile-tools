@@ -1,474 +1,88 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="bn">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#7c3aed">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#123c75">
 <title>ALAMIN301 Mobile Tools</title>
 <style>
-:root{--p:#7c3aed;--pink:#db2777;--line:#d8b4fe}
-*{box-sizing:border-box}
-body{margin:0;background:linear-gradient(135deg,#eff6ff,#fdf2f8,#f5f3ff);font-family:system-ui,Arial,sans-serif;color:#172554}
-header{background:linear-gradient(135deg,#312e81,#7c3aed,#db2777);color:white;padding:24px 17px;border-radius:0 0 22px 22px}
-.brand{font-size:23px;font-weight:900}
-.subtitle{font-size:13px;margin-top:6px;color:#e0f2fe}
-.wrap{max-width:760px;margin:auto;padding:15px}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
-.stat,.card,.item{background:white;border:1px solid var(--line);border-radius:15px;padding:13px;box-shadow:0 4px 14px #7c3aed12}
-.stat b{display:block;font-size:20px;color:var(--p)}
-.stat span{font-size:11px;color:#475569}
+:root{--blue:#123c75;--bg:#f3f6fb;--text:#172033;--muted:#657188;--line:#dce4f0}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);font-family:system-ui,Arial,sans-serif;color:var(--text)}
+header{background:linear-gradient(135deg,#123c75,#2476d2);color:white;padding:23px 17px;border-radius:0 0 22px 22px}
+.brand{font-size:22px;font-weight:850}.subtitle{font-size:13px;margin-top:5px}
+.wrap{max-width:760px;margin:auto;padding:15px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.stat,.card{background:white;border:1px solid var(--line);border-radius:15px;padding:13px;box-shadow:0 3px 12px #1d3b680c}
+.stat b{display:block;color:var(--blue);font-size:18px}.stat span{font-size:11px;color:var(--muted)}
 .tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin:15px 0}
-button{border:0;border-radius:10px;padding:12px;font-size:13px;font-weight:750;cursor:pointer}
-.tab{background:#ede9fe;color:#5b21b6}
-.tab.active,.primary{background:linear-gradient(135deg,#4f46e5,#9333ea,#db2777);color:white}
-.secondary{background:#dbeafe;color:#075985}
-.danger{background:#fee2e2;color:#be123c}
-h2{font-size:19px;color:#6d28d9;margin:3px 0 13px}
-h3{font-size:15px;color:#0f766e;margin:0 0 9px}
-label{display:block;font-size:13px;font-weight:750;color:#9333ea;margin:10px 0 5px}
-input,select{width:100%;padding:12px;border:1px solid #c4b5fd;border-radius:10px;background:white;color:#312e81;font-size:15px}
-.row{display:grid;grid-template-columns:1fr 1fr;gap:9px}
-.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
-.actions button{flex:1}
-.muted{color:#64748b;font-size:12px;line-height:1.6;overflow-wrap:anywhere}
-.notice,.result{padding:11px;border-radius:10px;font-size:12px;line-height:1.6;margin-top:12px}
-.notice{background:#fef3c7;color:#9a3412;border-left:4px solid #f59e0b}
-.result{background:#dcfce7;color:#166534;border-left:4px solid #22c55e}
-.item{margin-top:9px;overflow-wrap:anywhere}
-.item b{color:#4338ca}
-.pill{font-size:11px;background:#f3e8ff;color:#86198f;border-radius:30px;padding:5px 8px}
-.hidden{display:none!important}
-.download{display:inline-block;text-decoration:none;background:linear-gradient(135deg,#2563eb,#7c3aed);color:white;padding:10px 12px;border-radius:9px;font-weight:750;font-size:12px;margin:5px 5px 0 0}
-#homePhotoSection{max-width:760px;margin:15px auto;padding:0 15px}
-#homePhoto{display:none;width:100%;max-height:320px;object-fit:contain;border-radius:16px;background:white;box-shadow:0 4px 14px #7c3aed22}
-#homePhotoPreview{display:none;width:100%;max-height:220px;object-fit:contain;border-radius:12px}
-footer{text-align:center;color:#7c3aed;font-size:12px;padding:22px 5px}
+button{border:0;border-radius:10px;padding:11px 12px;font-size:13px;font-weight:700;cursor:pointer}
+.tab{background:#e3ebf8;color:#274363}.tab.active,.primary{background:var(--blue);color:white}
+.secondary{background:#e7eef9;color:#183d70}.danger{background:#fee4e2;color:#b42318}
+h2{font-size:19px;margin:3px 0 13px}h3{font-size:15px;margin:0 0 9px}
+label{display:block;font-size:13px;font-weight:700;color:#47536a;margin:10px 0 5px}
+input,select{width:100%;padding:12px;border:1px solid #cbd5e1;border-radius:10px;background:white;color:var(--text);font-size:15px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:9px}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.actions button{flex:1}
+.muted{color:var(--muted);font-size:12px;line-height:1.6;overflow-wrap:anywhere}
+.notice{padding:11px;border-radius:10px;background:#fff4d6;color:#77540a;font-size:12px;line-height:1.6;margin-top:12px}
+.result{padding:10px;background:#eaf7ef;color:#14532d;border-radius:10px;margin-top:10px}
+.item{border:1px solid var(--line);border-radius:12px;padding:12px;margin-top:9px;background:white;overflow-wrap:anywhere}
+.itemtop{display:flex;justify-content:space-between;gap:8px;align-items:center;flex-wrap:wrap}
+.pill{font-size:11px;background:#e5edfa;color:#234a82;border-radius:30px;padding:5px 8px}
+.hidden{display:none!important}.download{display:inline-block;text-decoration:none;background:#123c75;color:white;padding:10px 12px;border-radius:9px;font-weight:700;font-size:12px;margin:5px 5px 0 0}
+.driveopen{background:#e7eef9;color:#183d70}footer{text-align:center;color:var(--muted);font-size:12px;padding:22px 5px}
 @media(max-width:380px){.row{grid-template-columns:1fr}.brand{font-size:19px}}
 </style>
 </head>
 <body>
-<header>
-  <div class="brand">🛠️ ALAMIN301 Mobile Tools</div>
-  <div class="subtitle">Mobile Servicing File Center • Flash · Dump · FRP · ISP</div>
-</header>
-
-<section id="homePhotoSection">
-  <img id="homePhoto" alt="Home Screen Photo">
-</section>
-
+<header><div class="brand">🛠️ ALAMIN301 Mobile Tools</div><div class="subtitle">Mobile Servicing File Center • Flash · Dump · FRP · ISP</div></header>
 <main class="wrap">
-  <div class="stats">
-    <div class="stat"><b id="keyCount">0</b><span>Activation Keys</span></div>
-    <div class="stat"><b id="fileCount">0</b><span>File Links</span></div>
-    <div class="stat"><b id="today">—</b><span>আজকের তারিখ</span></div>
-  </div>
-
-  <nav class="tabs">
-    <button class="tab active" data-tab="customer">Customer</button>
-    <button class="tab" data-tab="files">File Center 🔒</button>
-    <button class="tab" data-tab="admin">Admin</button>
-  </nav>
-
-  <section id="customer" class="card panel">
-    <h2>👤 Customer Activation</h2>
-    <label>Customer Name</label>
-    <input id="customerName" placeholder="আপনার নাম">
-    <label>Activation Key</label>
-    <input id="activationInput" placeholder="ALM-AB12-CD34">
-    <div class="actions"><button class="primary" id="activateBtn">Activate App</button></div>
-    <div id="activationResult"></div>
-    <div id="customerStatus" class="item hidden"></div>
-    <div class="notice">ফাইল ডাউনলোড করতে বৈধ Activation Key প্রয়োজন।</div>
-  </section>
-
-  <section id="files" class="card panel hidden">
-    <h2>📂 Service File Center</h2>
-    <div id="fileLockMessage" class="notice hidden"></div>
-    <div id="fileControls">
-      <label>Search Brand / Model / File</label>
-      <input id="searchFiles" placeholder="যেমন Samsung A12">
-      <div class="row">
-        <div><label>File Type</label>
-          <select id="fileType">
-            <option>All Types</option><option>Flash File</option>
-            <option>Dump File</option><option>FRP File</option><option>ISP Pinout</option>
-          </select>
-        </div>
-        <div><label>Brand</label><select id="fileBrand"></select></div>
-      </div>
-      <div id="fileList"></div>
-      <div class="notice">Google Drive-এ Anyone with the link → Viewer চালু রাখুন।</div>
-    </div>
-  </section>
-
-  <section id="admin" class="card panel hidden">
-    <h2>🔐 Admin Panel</h2>
-    <div id="adminLogin">
-      <label>Username</label><input id="adminUser" autocomplete="username">
-      <label>Password</label><input id="adminPass" type="password" autocomplete="current-password">
-      <div class="actions"><button class="primary" id="loginBtn">Login</button></div>
-    </div>
-
-    <div id="adminTools" class="hidden">
-      <div class="item">
-        <h3>🖼️ Home Screen Photo Manager</h3>
-        <label>ছবি নির্বাচন করুন</label>
-        <input type="file" id="homePhotoInput" accept="image/*">
-        <img id="homePhotoPreview" alt="Photo Preview">
-        <div class="actions">
-          <button class="primary" id="saveHomePhoto">Save Home Photo</button>
-          <button class="danger" id="removeHomePhoto">Remove Photo</button>
-        </div>
-        <p class="muted">ছবি নির্বাচন করে Save Home Photo চাপুন। সর্বোচ্চ 1.5 MB।</p>
-      </div>
-
-      <div class="item">
-        <h3>Generate Activation Key</h3>
-        <label>Activation Period</label>
-        <select id="plan">
-          <option>1 Day</option><option>3 Days</option><option>1 Month</option>
-          <option>3 Months</option><option>6 Months</option><option>1 Year</option>
-          <option>2 Years</option><option>Lifetime</option>
-        </select>
-        <div class="actions"><button class="primary" id="generateKey">Generate Key</button></div>
-        <div id="newKeyResult"></div>
-      </div>
-
-      <div class="item">
-        <h3>Add / Edit Model & File Link</h3>
-        <div id="editFileNotice" class="notice hidden">Editing: <b id="editingFileName"></b></div>
-        <label>File Title / Model</label><input id="newFileTitle" placeholder="Samsung A12 firmware">
-        <div class="row">
-          <div><label>File Type</label>
-            <select id="newFileType">
-              <option>Flash File</option><option>Dump File</option>
-              <option>FRP File</option><option>ISP Pinout</option>
-            </select>
-          </div>
-          <div><label>Brand</label><select id="newFileBrand"></select></div>
-        </div>
-        <label>Google Drive Share Link / URL</label>
-        <input id="newFileUrl" type="url" placeholder="https://drive.google.com/file/d/FILE_ID/view">
-        <div class="actions">
-          <button class="primary" id="addFile">Save File Link</button>
-          <button class="secondary hidden" id="cancelEdit">Cancel Edit</button>
-        </div>
-      </div>
-
-      <div class="item"><h3>Manage Activation Keys</h3><div id="keyList"></div></div>
-      <div class="item"><h3>Manage Models / Files</h3><div id="adminFileList"></div></div>
-      <div class="actions">
-        <button class="secondary" id="exportData">Export Backup JSON</button>
-        <button class="danger" id="logoutBtn">Logout</button>
-      </div>
-    </div>
-  </section>
-  <footer>ALAMIN301 Mobile Tools • Colorful Edition</footer>
-</main>
-
+<div class="stats"><div class="stat"><b id="keyCount">0</b><span>Activation Keys</span></div><div class="stat"><b id="fileCount">0</b><span>File Links</span></div><div class="stat"><b id="today">—</b><span>আজকের তারিখ</span></div></div>
+<nav class="tabs"><button class="tab active" data-tab="customer">Customer</button><button class="tab" data-tab="files">File Center 🔒</button><button class="tab" data-tab="admin">Admin</button></nav>
+<section id="customer" class="card panel"><h2>👤 Customer Activation</h2><label>Customer Name</label><input id="customerName" placeholder="আপনার নাম"><label>Activation Key</label><input id="activationInput" placeholder="ALM-AB12-CD34"><div class="actions"><button class="primary" id="activateBtn">Activate App</button></div><div id="activationResult"></div><div id="customerStatus" class="item hidden"></div><div class="notice">ফাইল ডাউনলোড করতে বৈধ Activation Key প্রয়োজন।</div></section>
+<section id="files" class="card panel hidden"><h2>📂 Service File Center</h2><div id="fileLockMessage" class="notice hidden"></div><div id="fileControls"><label>Search Brand / Model / File</label><input id="searchFiles" placeholder="যেমন Samsung A12"><div class="row"><div><label>File Type</label><select id="fileType"><option>All Types</option><option>Flash File</option><option>Dump File</option><option>FRP File</option><option>ISP Pinout</option></select></div><div><label>Brand</label><select id="fileBrand"></select></div></div><div id="fileList"></div><div class="notice">Google Drive-এর Share সেটিংসে Anyone with the link → Viewer চালু রাখুন। Direct Download কাজ না করলে Open File চাপুন এবং Google Drive-এর নিজস্ব Download বোতাম ব্যবহার করুন।</div></div></section>
+<section id="admin" class="card panel hidden"><h2>🔐 Admin Panel</h2><div id="adminLogin"><label>Username</label><input id="adminUser" autocomplete="username"><label>Password</label><input id="adminPass" type="password" autocomplete="current-password"><div class="actions"><button class="primary" id="loginBtn">Login</button></div><p class="muted">Demo Login: ALAMIN301<br>Password: Aa301@gmail.com<br>এটি HTML demo; প্রকৃত নিরাপত্তার জন্য server-side login প্রয়োজন।</p></div>
+<div id="adminTools" class="hidden"><div class="item"><h3>Generate Activation Key</h3><label>Activation Period</label><select id="plan"><option>1 Day</option><option>3 Days</option><option>1 Month</option><option>3 Months</option><option>6 Months</option><option>1 Year</option><option>2 Years</option><option>Lifetime</option></select><div class="actions"><button class="primary" id="generateKey">Generate Key</button></div><div id="newKeyResult"></div></div>
+<div class="item"><h3>Add Model / File Link</h3><label>File Title / Model</label><input id="newFileTitle" placeholder="Samsung A12 firmware"><div class="row"><div><label>File Type</label><select id="newFileType"><option>Flash File</option><option>Dump File</option><option>FRP File</option><option>ISP Pinout</option></select></div><div><label>Brand</label><select id="newFileBrand"></select></div></div><label>Google Drive Share Link / Direct URL</label><input id="newFileUrl" type="url" placeholder="https://drive.google.com/file/d/FILE_ID/view"><p class="muted">Google Drive → Share → General access → Anyone with the link → Viewer → Copy link।</p><div id="urlPreview" class="muted"></div><div class="actions"><button class="primary" id="addFile">Save File Link</button></div></div>
+<div class="item"><h3>Manage Activation Keys</h3><div id="keyList"></div></div><div class="item"><h3>Manage Models / Files</h3><div id="adminFileList"></div></div><div class="actions"><button class="secondary" id="exportData">Export Backup JSON</button><button class="danger" id="logoutBtn">Logout</button></div></div></section>
+<footer>ALAMIN301 Mobile Tools • Local HTML Web App</footer></main>
 <script>
 "use strict";
-const DEMO_USER="ALAMIN301";
-const DEMO_PASS="Aa301@gmail.com";
 const BRANDS=["Samsung","Xiaomi","Redmi","POCO","OPPO","Vivo","Realme","OnePlus","Huawei","Honor","Motorola","Nokia","Tecno","Infinix","Itel","Google Pixel","iPhone / Apple","Asus","Lenovo","Sony","Walton","Symphony","Lava","Other"];
-const $=id=>document.getElementById(id);
-function get(k,d){try{return JSON.parse(localStorage.getItem(k))??d}catch{return d}}
+const DEMO_USER="ALAMIN301",DEMO_PASS="Aa301@gmail.com",$=id=>document.getElementById(id);
+function get(k,f){try{return JSON.parse(localStorage.getItem(k))??f}catch{return f}}
 function set(k,v){try{localStorage.setItem(k,JSON.stringify(v));return true}catch{alert("Storage-এ ডেটা সংরক্ষণ করা যায়নি।");return false}}
-
-let keys=get("alam_keys",[]),files=get("alam_files",[]),active=get("alam_active",null),isAdmin=false,editingFileId=null;
-if(!Array.isArray(keys))keys=[];
-if(!Array.isArray(files))files=[];
-
+let keys=get("alam_keys",[]),files=get("alam_files",[]),active=get("alam_active",null),isAdmin=false;
+if(!Array.isArray(keys))keys=[];if(!Array.isArray(files))files=[];
 function esc(v){return String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
 function dateText(d=new Date()){return d.toLocaleDateString("en-GB",{day:"2-digit",month:"short",year:"numeric"})}
 $("today").textContent=dateText();
-
-function fillBrands(id,all=false){
-  const a=all?["All Brands",...BRANDS]:BRANDS;
-  $(id).innerHTML=a.map(b=>`<option value="${esc(b)}">${esc(b)}</option>`).join("");
-}
-fillBrands("fileBrand",true);
-fillBrands("newFileBrand");
-
-function updateCounts(){
-  $("keyCount").textContent=keys.length;
-  $("fileCount").textContent=files.length;
-}
-function saveAll(){
-  const a=set("alam_keys",keys),b=set("alam_files",files),c=set("alam_active",active);
-  updateCounts();
-  return a&&b&&c;
-}
-
-function planDays(p){
-  return {"1 Day":1,"3 Days":3,"1 Month":30,"3 Months":90,"6 Months":180,"1 Year":365,"2 Years":730}[p]||1;
-}
-function expired(x){
-  if(!x)return true;
-  if(x.plan==="Lifetime")return false;
-  if(!x.activatedAt)return true;
-  const d=new Date(x.activatedAt);
-  if(Number.isNaN(d.getTime()))return true;
-  d.setDate(d.getDate()+planDays(x.plan));
-  return Date.now()>=d.getTime();
-}
-function hasValidActivation(){
-  if(!active?.code)return false;
-  const k=keys.find(x=>x.code===active.code);
-  return !!(k&&k.used&&k.activatedAt===active.activatedAt&&k.customer===active.customer&&!expired(active));
-}
-function expiryDate(x){
-  if(!x)return "Not activated";
-  if(x.plan==="Lifetime")return "Lifetime";
-  if(!x.activatedAt)return "Not activated";
-  const d=new Date(x.activatedAt);
-  d.setDate(d.getDate()+planDays(x.plan));
-  return dateText(d);
-}
-function renderStatus(){
-  const e=$("customerStatus");
-  if(!active){e.classList.add("hidden");e.innerHTML="";return}
-  e.classList.remove("hidden");
-  e.innerHTML=`<b>Activation Information</b><p>Customer: ${esc(active.customer)}<br>Plan: ${esc(active.plan)}<br>Expiry: ${esc(expiryDate(active))}<br>Status: ${hasValidActivation()?"Active":"Expired / Invalid"}</p>`;
-}
-function showTab(n){
-  document.querySelectorAll(".tab").forEach(b=>b.classList.toggle("active",b.dataset.tab===n));
-  document.querySelectorAll(".panel").forEach(p=>p.classList.toggle("hidden",p.id!==n));
-}
-document.querySelectorAll(".tab").forEach(b=>b.onclick=()=>{
-  const n=b.dataset.tab;
-  if(n==="files"&&!hasValidActivation()){
-    showTab("customer");
-    $("activationResult").textContent="File Center ব্যবহার করতে আগে Activation Key দিন।";
-    renderFiles();return;
-  }
-  showTab(n);
-  if(n==="files")renderFiles();
-  if(n==="admin"&&isAdmin){renderKeys();renderAdminFiles()}
-});
-
-$("activateBtn").onclick=()=>{
-  const name=$("customerName").value.trim();
-  const code=$("activationInput").value.trim().toUpperCase();
-  if(!name||!code){$("activationResult").textContent="নাম ও Activation Key দিন।";return}
-  const k=keys.find(x=>x.code===code);
-  if(!k){$("activationResult").textContent="Activation Key পাওয়া যায়নি।";return}
-  if(k.used){$("activationResult").textContent="এই Key আগে ব্যবহার করা হয়েছে।";return}
-  const activatedAt=new Date().toISOString();
-  k.used=true;k.customer=name;k.activatedAt=activatedAt;
-  active={code:k.code,customer:name,plan:k.plan,activatedAt};
-  if(!saveAll())return;
-  $("activationResult").innerHTML='<div class="result">Activation সফল হয়েছে।</div>';
-  renderStatus();renderKeys();renderFiles();
-};
-
-$("loginBtn").onclick=()=>{
-  if($("adminUser").value===DEMO_USER&&$("adminPass").value===DEMO_PASS){
-    isAdmin=true;
-    $("adminLogin").classList.add("hidden");
-    $("adminTools").classList.remove("hidden");
-    $("adminUser").value="";$("adminPass").value="";
-    renderKeys();renderAdminFiles();loadHomePhoto();
-  }else{
-    alert("Login তথ্য সঠিক নয়।");
-    $("adminPass").value="";
-  }
-};
-$("logoutBtn").onclick=()=>{
-  isAdmin=false;resetEditor();
-  $("adminTools").classList.add("hidden");
-  $("adminLogin").classList.remove("hidden");
-  $("adminUser").value="";$("adminPass").value="";
-};
-
-window.copyKey=async c=>{
-  try{await navigator.clipboard.writeText(c);alert("Key copied!")}
-  catch{prompt("Key কপি করুন:",c)}
-};
-
-$("generateKey").onclick=()=>{
-  if(!isAdmin)return;
-  const part=()=>Array.from(crypto.getRandomValues(new Uint8Array(4)),v=>(v%36).toString(36)).join("").toUpperCase();
-  let code;
-  do{code="ALM-"+part()+"-"+part()}while(keys.some(k=>k.code===code));
-  keys.unshift({code,plan:$("plan").value,created:dateText(),used:false});
-  if(!saveAll())return;
-  $("newKeyResult").innerHTML=`<div class="result">New Key: <b>${esc(code)}</b><br><button class="secondary" onclick="copyKey('${esc(code)}')">Copy Key</button></div>`;
-  renderKeys();
-};
-
-function normalizeUrl(s){
-  try{
-    const u=new URL(s.trim());
-    if(!["http:","https:"].includes(u.protocol))return null;
-    const drive=/^(drive|docs)\.google\.com$/.test(u.hostname);
-    const m=u.pathname.match(/\/(?:file|document|spreadsheets|presentation)\/d\/([^/]+)/);
-    let id=u.searchParams.get("id")||(m?m[1]:"");
-    if(!drive||!id)return{original:u.href,open:u.href,download:u.href};
-    id=id.replace(/[^a-zA-Z0-9_-]/g,"");
-    return{
-      original:u.href,
-      open:u.hostname.startsWith("docs.")?u.href:"https://drive.google.com/file/d/"+id+"/view",
-      download:u.hostname.startsWith("docs.")?u.href:"https://drive.google.com/uc?export=download&id="+encodeURIComponent(id)
-    };
-  }catch{return null}
-}
-function links(f){
-  if(!hasValidActivation())return "";
-  const r=normalizeUrl(f.originalUrl||f.url||"");
-  if(!r)return "";
-  return `<a class="download" href="${esc(r.open)}" target="_blank" rel="noopener noreferrer">📂 Open File</a><a class="download" href="${esc(r.download)}" target="_blank" rel="noopener noreferrer">⬇ Download</a>`;
-}
-function resetEditor(){
-  editingFileId=null;
-  $("newFileTitle").value="";$("newFileUrl").value="";
-  $("addFile").textContent="Save File Link";
-  $("cancelEdit").classList.add("hidden");
-  $("editFileNotice").classList.add("hidden");
-}
-window.editFileEntry=id=>{
-  if(!isAdmin)return;
-  const i=files.findIndex((f,n)=>String(f.id||n)===String(id));
-  if(i<0)return;
-  const f=files[i];editingFileId=String(f.id||i);
-  $("newFileTitle").value=f.title||"";
-  $("newFileType").value=f.type||"Flash File";
-  $("newFileBrand").value=f.brand||"Other";
-  $("newFileUrl").value=f.originalUrl||f.url||"";
-  $("editingFileName").textContent=f.title||"";
-  $("editFileNotice").classList.remove("hidden");
-  $("cancelEdit").classList.remove("hidden");
-  $("addFile").textContent="Update File";
-};
-$("cancelEdit").onclick=resetEditor;
-
-$("addFile").onclick=()=>{
-  if(!isAdmin)return;
-  const title=$("newFileTitle").value.trim();
-  const r=normalizeUrl($("newFileUrl").value);
-  if(!title||!r){alert("File title এবং সঠিক URL দিন।");return}
-  if(editingFileId!==null){
-    const i=files.findIndex((f,n)=>String(f.id||n)===editingFileId);
-    if(i<0)return;
-    files[i]={...files[i],title,type:$("newFileType").value,brand:$("newFileBrand").value,...r,updated:dateText()};
-  }else{
-    files.unshift({id:crypto.randomUUID?crypto.randomUUID():"f-"+Date.now(),title,type:$("newFileType").value,brand:$("newFileBrand").value,...r,added:dateText()});
-  }
-  if(!saveAll())return;
-  resetEditor();renderFiles();renderAdminFiles();alert("File saved!");
-};
-
-function renderKeys(){
-  $("keyCount").textContent=keys.length;
-  $("keyList").innerHTML=keys.length?keys.map(k=>`
-    <div class="item"><b>${esc(k.code)}</b> <span class="pill">${esc(k.plan)}</span>
-    <p class="muted">Status: ${k.used?"Used":"Unused"}${k.customer?"<br>Customer: "+esc(k.customer):""}</p>
-    <button class="secondary" onclick="copyKey('${esc(k.code)}')">Copy Key</button>
-    <button class="danger" onclick="deleteKey('${esc(k.code)}')">Delete Key</button></div>`).join(""):"কোনো Key তৈরি হয়নি।";
-}
-window.deleteKey=c=>{
-  if(!isAdmin||!confirm("Key মুছে ফেলবেন?"))return;
-  keys=keys.filter(k=>k.code!==c);
-  if(active?.code===c)active=null;
-  saveAll();renderKeys();renderStatus();renderFiles();
-};
-function renderAdminFiles(){
-  $("adminFileList").innerHTML=files.length?files.map((f,i)=>`
-    <div class="item"><b>${esc(f.title)}</b> <span class="pill">${esc(f.brand)} · ${esc(f.type)}</span>
-    <div class="actions"><button class="secondary" onclick="editFileEntry('${esc(String(f.id||i))}')">✏️ Edit</button>
-    <button class="danger" onclick="deleteFileEntry('${esc(String(f.id||i))}')">Delete</button></div></div>`).join(""):"কোনো ফাইল নেই।";
-}
-window.deleteFileEntry=id=>{
-  if(!isAdmin||!confirm("ফাইল মুছে ফেলবেন?"))return;
-  const i=files.findIndex((f,n)=>String(f.id||n)===String(id));
-  if(i<0)return;
-  files.splice(i,1);saveAll();renderFiles();renderAdminFiles();
-};
-function renderFiles(){
-  const locked=!hasValidActivation();
-  $("fileLockMessage").classList.toggle("hidden",!locked);
-  $("fileControls").classList.toggle("hidden",locked);
-  if(locked){
-    $("fileLockMessage").innerHTML='🔒 File Center Locked<br>আগে বৈধ Activation Key দিয়ে অ্যাক্টিভেট করুন। <button class="primary" id="goActivate">Activate</button>';
-    $("goActivate").onclick=()=>showTab("customer");
-    $("fileList").innerHTML="";$("fileCount").textContent=files.length;return;
-  }
-  const q=$("searchFiles").value.toLowerCase().trim(),t=$("fileType").value,b=$("fileBrand").value;
-  const found=files.filter(f=>(`${f.title||""} ${f.brand||""} ${f.type||""}`).toLowerCase().includes(q)&&(t==="All Types"||f.type===t)&&(b==="All Brands"||f.brand===b));
-  $("fileList").innerHTML=found.length?found.map(f=>`<div class="item"><b>${esc(f.title)}</b> <span class="pill">${esc(f.type)}</span><p class="muted">${esc(f.brand)}</p>${links(f)}</div>`).join(""):"কোনো ফাইল পাওয়া যায়নি।";
-  $("fileCount").textContent=files.length;
-}
-$("searchFiles").oninput=renderFiles;
-$("fileType").onchange=renderFiles;
-$("fileBrand").onchange=renderFiles;
-
-$("exportData").onclick=()=>{
-  if(!isAdmin)return;
-  const blob=new Blob([JSON.stringify({keys,files,active},null,2)],{type:"application/json"});
-  const url=URL.createObjectURL(blob),a=document.createElement("a");
-  a.href=url;a.download="ALAMIN301-backup.json";a.click();URL.revokeObjectURL(url);
-};
-
-/* Home Screen photo manager */
-const PHOTO_KEY="alam_home_photo";
-function loadHomePhoto(){
-  let saved=null;
-  try{saved=localStorage.getItem(PHOTO_KEY)}catch{}
-  const home=$("homePhoto"),preview=$("homePhotoPreview");
-  if(saved){
-    home.src=saved;home.style.display="block";
-    preview.src=saved;preview.style.display="block";
-  }else{
-    home.removeAttribute("src");home.style.display="none";
-    preview.removeAttribute("src");preview.style.display="none";
-  }
-}
-$("homePhotoInput").addEventListener("change",function(){
-  const file=this.files[0];
-  if(!file)return;
-  if(!file.type.startsWith("image/")){
-    alert("একটি ছবি নির্বাচন করুন।");this.value="";return;
-  }
-  if(file.size>1500000){
-    alert("ছবির সাইজ 1.5 MB-এর মধ্যে রাখুন।");this.value="";return;
-  }
-  const reader=new FileReader();
-  reader.onload=()=>{
-    $("homePhotoPreview").src=reader.result;
-    $("homePhotoPreview").style.display="block";
-  };
-  reader.readAsDataURL(file);
-});
-$("saveHomePhoto").onclick=()=>{
-  if(!isAdmin){alert("আগে Admin Login করুন।");return}
-  const file=$("homePhotoInput").files[0];
-  if(!file){alert("প্রথমে একটি ছবি নির্বাচন করুন।");return}
-  const reader=new FileReader();
-  reader.onload=()=>{
-    try{
-      localStorage.setItem(PHOTO_KEY,reader.result);
-      loadHomePhoto();alert("Home Screen Photo সংরক্ষণ হয়েছে!");
-    }catch(e){alert("ছবিটি সংরক্ষণ করা যায়নি। ছোট সাইজের ছবি ব্যবহার করুন।")}
-  };
-  reader.readAsDataURL(file);
-};
-$("removeHomePhoto").onclick=()=>{
-  if(!isAdmin){alert("আগে Admin Login করুন।");return}
-  if(confirm("Home Screen থেকে ছবিটি মুছে ফেলবেন?")){
-    localStorage.removeItem(PHOTO_KEY);
-    $("homePhotoInput").value="";
-    loadHomePhoto();alert("ছবি মুছে ফেলা হয়েছে।");
-  }
-};
-
-updateCounts();
-renderKeys();
-renderAdminFiles();
-renderStatus();
-renderFiles();
-loadHomePhoto();
+function fillBrands(id,all=false){const list=all?["All Brands",...BRANDS]:BRANDS;$(id).innerHTML=list.map(b=>`<option value="${esc(b)}">${esc(b)}</option>`).join("")}
+fillBrands("fileBrand",true);fillBrands("newFileBrand");
+function updateCounts(){$("keyCount").textContent=keys.length;$("fileCount").textContent=files.length}
+function saveAll(){const a=set("alam_keys",keys),b=set("alam_files",files),c=set("alam_active",active);updateCounts();return a&&b&&c}
+function planDays(p){return {"1 Day":1,"3 Days":3,"1 Month":30,"3 Months":90,"6 Months":180,"1 Year":365,"2 Years":730}[p]||1}
+function expired(x){if(!x)return true;if(x.plan==="Lifetime")return false;if(!x.activatedAt)return true;const s=new Date(x.activatedAt);if(Number.isNaN(s.getTime()))return true;const e=new Date(s);e.setDate(e.getDate()+planDays(x.plan));return Date.now()>=e.getTime()}
+function hasValidActivation(){if(!active||!active.code)return false;const k=keys.find(x=>x.code===active.code);return !!(k&&k.used&&k.activatedAt===active.activatedAt&&k.customer===active.customer&&!expired(active))}
+function expiryDate(x){if(!x)return "Not activated";if(x.plan==="Lifetime")return "Lifetime";if(!x.activatedAt)return "Not activated";const d=new Date(x.activatedAt);d.setDate(d.getDate()+planDays(x.plan));return dateText(d)}
+function renderStatus(){const el=$("customerStatus");if(!active){el.classList.add("hidden");el.innerHTML="";return}el.classList.remove("hidden");el.innerHTML=`<b>Activation Information</b><p>Customer: ${esc(active.customer)}<br>Plan: ${esc(active.plan)}<br>Expiry: ${esc(expiryDate(active))}<br>Status: ${hasValidActivation()?"Active":"Expired / Invalid"}</p>`}
+function showTab(n){document.querySelectorAll(".tab").forEach(b=>b.classList.toggle("active",b.dataset.tab===n));document.querySelectorAll(".panel").forEach(p=>p.classList.toggle("hidden",p.id!==n))}
+document.querySelectorAll(".tab").forEach(b=>b.addEventListener("click",()=>{const t=b.dataset.tab;if(t==="files"&&!hasValidActivation()){showTab("customer");$("activationResult").textContent="File Center ব্যবহার করতে আগে Activation Key দিন।";renderFiles();return}showTab(t);if(t==="files")renderFiles();if(t==="admin"&&isAdmin){renderKeys();renderAdminFiles()}}));
+$("activateBtn").addEventListener("click",()=>{const name=$("customerName").value.trim(),code=$("activationInput").value.trim().toUpperCase();if(!name||!code){$("activationResult").textContent="নাম ও Activation Key দিন।";return}const k=keys.find(x=>x.code===code);if(!k){$("activationResult").textContent="Activation Key পাওয়া যায়নি।";return}if(k.used){$("activationResult").textContent="এই Key আগে ব্যবহার করা হয়েছে।";return}const activatedAt=new Date().toISOString();k.used=true;k.customer=name;k.activatedAt=activatedAt;active={code:k.code,customer:name,plan:k.plan,activatedAt};if(!saveAll())return;$("activationResult").innerHTML='<div class="result">Activation সফল হয়েছে।</div>';renderStatus();renderKeys();renderFiles()});
+$("loginBtn").addEventListener("click",()=>{if($("adminUser").value===DEMO_USER&&$("adminPass").value===DEMO_PASS){isAdmin=true;$("adminLogin").classList.add("hidden");$("adminTools").classList.remove("hidden");renderKeys();renderAdminFiles()}else alert("Login তথ্য সঠিক নয়।")});
+$("logoutBtn").addEventListener("click",()=>{isAdmin=false;$("adminTools").classList.add("hidden");$("adminLogin").classList.remove("hidden");$("adminPass").value=""});
+window.copyKey=async code=>{try{await navigator.clipboard.writeText(code);alert("Key copied!")}catch{prompt("Key কপি করুন:",code)}};
+$("generateKey").addEventListener("click",()=>{if(!isAdmin)return;const part=()=>Array.from(crypto.getRandomValues(new Uint8Array(4)),v=>(v%36).toString(36)).join("").toUpperCase();let code;do{code="ALM-"+part()+"-"+part()}while(keys.some(x=>x.code===code));const k={code,plan:$("plan").value,created:dateText(),used:false};keys.unshift(k);if(!saveAll())return;$("newKeyResult").innerHTML=`<div class="result">New Key: <b>${esc(k.code)}</b><br>Plan: ${esc(k.plan)} <button class="secondary" onclick="copyKey('${esc(k.code)}')">Copy Key</button></div>`;renderKeys()});
+function normalizeFileUrl(input){try{const u=new URL(String(input).trim());if(!["http:","https:"].includes(u.protocol))return null;const host=u.hostname.toLowerCase(),dh=["drive.google.com","www.drive.google.com"].includes(host),doc=["docs.google.com","www.docs.google.com"].includes(host);if(!dh&&!doc)return{isDrive:false,id:"",original:u.href,download:u.href,open:u.href};let id=u.searchParams.get("id")||"";const m=u.pathname.match(/\/(?:file|document|spreadsheets|presentation)\/d\/([^/]+)/);if(!id&&m)id=m[1];id=id.replace(/[^a-zA-Z0-9_-]/g,"");if(!id)return{isDrive:true,id:"",original:u.href,download:u.href,open:u.href};const open=doc?u.href:"https://drive.google.com/file/d/"+encodeURIComponent(id)+"/view",download=doc?u.href:"https://drive.google.com/uc?export=download&id="+encodeURIComponent(id);return{isDrive:true,id,original:u.href,download,open}}catch{return null}}
+$("newFileUrl").addEventListener("input",()=>{const r=normalizeFileUrl($("newFileUrl").value);$("urlPreview").textContent=!r?"":r.isDrive?(r.id?"Drive File ID: "+r.id:"Drive link detected"):"URL ঠিক আছে।"});
+function safeHttpUrl(v){try{const u=new URL(v);return["http:","https:"].includes(u.protocol)?u.href:"#"}catch{return"#"}}
+function fileLinks(f){if(!hasValidActivation())return'<div class="notice">Activation প্রয়োজন।</div>';const r=normalizeFileUrl(f.originalUrl||f.url||f.openUrl||"");if(!r)return'<div class="notice">ভুল ফাইল লিংক। Admin থেকে ঠিক করুন।</div>';const d=safeHttpUrl(r.download),o=safeHttpUrl(r.open);if(r.isDrive&&r.id)return`<a class="download" href="${esc(o)}" target="_blank" rel="noopener noreferrer">📂 Open File / Download</a><a class="download driveopen" href="${esc(d)}" target="_blank" rel="noopener noreferrer">⬇ Try Direct Download</a>`;return`<a class="download" href="${esc(d)}" target="_blank" rel="noopener noreferrer">⬇ Open / Download File</a><a class="download driveopen" href="${esc(o)}" target="_blank" rel="noopener noreferrer">Open Original Link</a>`}
+$("addFile").addEventListener("click",()=>{if(!isAdmin)return;const title=$("newFileTitle").value.trim(),raw=$("newFileUrl").value.trim(),r=normalizeFileUrl(raw);if(!title||!r){alert("File title এবং সঠিক URL দিন।");return}if(r.isDrive&&!r.id&&!confirm("Drive ID শনাক্ত হয়নি। Link save করবেন?"))return;const id=window.crypto?.randomUUID?crypto.randomUUID():"f-"+Date.now();files.unshift({id,title,type:$("newFileType").value,brand:$("newFileBrand").value,url:r.download,openUrl:r.open,originalUrl:r.original,driveId:r.id,isDrive:r.isDrive,added:dateText()});if(!saveAll())return;$("newFileTitle").value="";$("newFileUrl").value="";$("urlPreview").textContent="";renderFiles();renderAdminFiles();alert("File link saved!")});
+function renderKeys(){$("keyCount").textContent=keys.length;$("keyList").innerHTML=keys.length?keys.map(k=>`<div class="item"><b>${esc(k.code)}</b> <span class="pill">${esc(k.plan)}</span><p class="muted">Created: ${esc(k.created||"")}<br>Status: ${k.used?"Used":"Unused"}${k.customer?"<br>Customer: "+esc(k.customer):""}</p><button class="secondary" onclick="copyKey('${esc(k.code)}')">Copy Key</button> <button class="danger" onclick="deleteKey('${esc(k.code)}')">Delete Key</button></div>`).join(""):'<p class="muted">কোনো Key তৈরি হয়নি।</p>'}
+window.deleteKey=code=>{if(!isAdmin||!confirm("Key মুছে ফেলবেন?"))return;keys=keys.filter(x=>x.code!==code);if(active&&active.code===code)active=null;saveAll();renderKeys();renderStatus();renderFiles()};
+function renderAdminFiles(){$("adminFileList").innerHTML=files.length?files.map((f,i)=>`<div class="item"><b>${esc(f.title)}</b> <span class="pill">${esc(f.brand)} · ${esc(f.type)}</span><p class="muted">${esc(f.added||"")}</p>${fileLinks(f)}<button class="danger" onclick="deleteFileEntry('${esc(String(f.id||i))}')">Delete File</button></div>`).join(""):'<p class="muted">কোনো ফাইল নেই।</p>'}
+window.deleteFileEntry=id=>{if(!isAdmin||!confirm("ফাইলটি মুছে ফেলবেন?"))return;const i=files.findIndex((f,n)=>String(f.id||n)===String(id));if(i<0)return;files.splice(i,1);saveAll();renderFiles();renderAdminFiles()};
+function renderFiles(){const locked=!hasValidActivation();$("fileLockMessage").classList.toggle("hidden",!locked);$("fileControls").classList.toggle("hidden",locked);if(locked){$("fileLockMessage").innerHTML='🔒 File Center Locked<br>আগে বৈধ Activation Key দিয়ে অ্যাক্টিভেট করুন। <button class="primary" id="goActivate">Activate</button>';$("goActivate").addEventListener("click",()=>showTab("customer"));$("fileList").innerHTML="";$("fileCount").textContent=files.length;return}const q=$("searchFiles").value.toLowerCase().trim(),type=$("fileType").value,brand=$("fileBrand").value;const found=files.filter(f=>(String(f.title||"")+" "+String(f.brand||"")+" "+String(f.type||"")).toLowerCase().includes(q)&&(type==="All Types"||f.type===type)&&(brand==="All Brands"||f.brand===brand));$("fileCount").textContent=files.length;$("fileList").innerHTML=found.length?found.map(f=>`<div class="item"><div class="itemtop"><b>${esc(f.title)}</b><span class="pill">${esc(f.type)}</span></div><p class="muted">${esc(f.brand)}</p>${fileLinks(f)}<p class="muted">Direct Download কাজ না করলে Open File চাপুন। Drive-এর পেজে Download আইকন ব্যবহার করুন।</p></div>`).join(""):'<p class="muted">কোনো ফাইল পাওয়া যায়নি।</p>'}
+$("searchFiles").addEventListener("input",renderFiles);$("fileType").addEventListener("change",renderFiles);$("fileBrand").addEventListener("change",renderFiles);
+$("exportData").addEventListener("click",()=>{if(!isAdmin)return;const blob=new Blob([JSON.stringify({keys,files,active},null,2)],{type:"application/json"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download="ALAMIN301-backup.json";document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),5000)});
+updateCounts();renderKeys();renderAdminFiles();renderStatus();renderFiles();
 </script>
-</body>
-</html>
-
+</body></html>
